@@ -23,7 +23,13 @@ namespace NezarkaBookstoreWeb {
 			}
 
 			public void RenderTo(TextWriter w) {
-				w.WriteLine("	" + customer.FirstName + ", here is your menu:");
+				w.Write("	" + customer.FirstName + " (we love you since ");
+				if (customer.DateJoined == null) {
+					w.Write("always");
+				} else {
+					w.Write(customer.DateJoined.Value.ToShortDateString());
+				}
+				w.WriteLine("), here is your menu:");
 				w.WriteLine("	<table>");
 				w.WriteLine("		<tr>");
 				w.WriteLine("			<td><a href=\"/Books\">Books</a></td>");
