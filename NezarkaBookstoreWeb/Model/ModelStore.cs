@@ -44,20 +44,26 @@ namespace NezarkaBookstoreWeb {
 								Id = int.Parse(tokens[1]), Title = tokens[2], Author = tokens[3], Price = decimal.Parse(tokens[4])
 							});
 							break;
-						case "CUSTOMER":
-							store.customers.Add(new Customer {
-								Id = int.Parse(tokens[1]), FirstName = tokens[2], LastName = tokens[3]
-							});
-							break;
-						case "CART-ITEM":
-							var customer = store.GetCustomer(int.Parse(tokens[1]));
-							if (customer == null) {
-								return null;
+						case "CUSTOMER": {
+								var customer = new Customer {
+									Id = int.Parse(tokens[1]), FirstName = tokens[2], LastName = tokens[3], DateJoined = null
+								};
+								if (tokens.Length >= 6) {
+									customer.DateJoined = new DateTime(int.Parse(tokens[4]), int.Parse(tokens[5]), int.Parse(tokens[6]));
+								}
+								store.customers.Add(customer);
+								break;
 							}
-							customer.ShoppingCart.Items.Add(new ShoppingCartItem {
-								BookId = int.Parse(tokens[2]), Count = int.Parse(tokens[3])
-							});
-							break;
+						case "CART-ITEM": {
+								var customer = store.GetCustomer(int.Parse(tokens[1]));
+								if (customer == null) {
+									return null;
+								}
+								customer.ShoppingCart.Items.Add(new ShoppingCartItem {
+									BookId = int.Parse(tokens[2]), Count = int.Parse(tokens[3])
+								});
+								break;
+							}
 						default:
 							return null;
 					}
