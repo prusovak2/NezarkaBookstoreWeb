@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\NezarkaBookstoreWeb\NezarkaBookstoreWeb.csproj">
+      <Project>{06da3411-4500-471e-beb8-b2690f720b2a}</Project>
+      <Name>NezarkaBookstoreWeb</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
