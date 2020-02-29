@@ -32,6 +32,19 @@ namespace NezarkaBookstoreWeb {
 				shoppingCart = value;
 			}
 		}
+		public override string ToString()
+		{
+			string date;
+			if (this.DateJoined == null)
+			{
+				 date = "always";
+			}
+			else
+			{
+				 date = $"year {this.DateJoined.Value.Year.ToString()}";
+			}
+			return $"{this.FirstName} {this.LastName} since {date}";
+		}
 	}
 
 	class ShoppingCartItem {

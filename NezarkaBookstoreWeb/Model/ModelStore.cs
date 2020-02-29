@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 
 using System.IO;
+using System.Runtime.CompilerServices;
 
-namespace NezarkaBookstoreWeb {
+[assembly: InternalsVisibleTo("JumpingPlatformGame")]
 
-	class ModelStore {
+namespace NezarkaBookstoreWeb
+{
+	
+	 class ModelStore {
 		private List<Book> books = new List<Book>();
 		private List<Customer> customers = new List<Customer>();
 
@@ -20,6 +24,11 @@ namespace NezarkaBookstoreWeb {
 
 		public Customer GetCustomer(int id) {
 			return customers.Find(c => c.Id == id);
+		}
+
+		public List<Customer> GetCustomersList()
+		{
+			return this.customers;
 		}
 
 		public static ModelStore LoadFrom(TextReader reader) {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NezarkaBookstoreWeb;
 
 namespace JumpingPlatformGame {
 	public partial class MainForm : Form {
@@ -26,7 +27,7 @@ namespace JumpingPlatformGame {
 
 			entity.Location = new WorldPoint {
 				X = random.Next(LabelWidth / 2, worldPanel.Width - LabelWidth / 2).Meters(),
-				Y = (LabelWidth / 2).Meters() //is this correct?
+				Y = (LabelHeight / 2).Meters() //is this correct?
 			};
 
 			var label = new Label();
@@ -84,6 +85,25 @@ namespace JumpingPlatformGame {
 		private void jackButton_Click(object sender, EventArgs e) => RegisterEntity(new Jack());
 
 		private void jillButton_Click(object sender, EventArgs e) => RegisterEntity(new Jill());
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{			
+			var reader = Console.In;
+
+			var store = ModelStore.LoadFrom(reader);
+			if (store == null)
+			{
+				CustomerListBox.SelectionMode = SelectionMode.None;
+				CustomerListBox.Items.Add("Customer databaze currently unavailable.");
+				return;
+			}
+
+			List<Customer> customers = store.GetCustomersList();
+			foreach (var item in customers)
+			{
+				CustomerListBox.Items.Add(item);
+			}
+		}
 	}
 
 	static class ControlExtensions {

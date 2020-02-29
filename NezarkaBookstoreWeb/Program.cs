@@ -7,7 +7,7 @@ using System.IO;
 namespace NezarkaBookstoreWeb {
 	
 	class Program {
-		private static void Main(string[] args) {
+		public static void Main(string[] args) {
 			var reader = Console.In;
 
 			var store = ModelStore.LoadFrom(reader);
