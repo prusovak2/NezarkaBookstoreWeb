@@ -104,6 +104,11 @@ namespace JumpingPlatformGame {
 				CustomerListBox.Items.Add(item);
 			}
 		}
+
+		private void AddCustomerEntityButton_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 
 	static class ControlExtensions {

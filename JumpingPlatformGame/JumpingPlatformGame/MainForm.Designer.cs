@@ -32,6 +32,7 @@
             this.jillButton = new System.Windows.Forms.Button();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.CustomerListBox = new System.Windows.Forms.ListBox();
+            this.AddCustomerEntityButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // worldPanel
@@ -112,11 +113,22 @@
             this.CustomerListBox.Size = new System.Drawing.Size(293, 512);
             this.CustomerListBox.TabIndex = 6;
             // 
+            // AddCustomerEntityButton
+            // 
+            this.AddCustomerEntityButton.Location = new System.Drawing.Point(856, 575);
+            this.AddCustomerEntityButton.Name = "AddCustomerEntityButton";
+            this.AddCustomerEntityButton.Size = new System.Drawing.Size(292, 41);
+            this.AddCustomerEntityButton.TabIndex = 7;
+            this.AddCustomerEntityButton.Text = "Add customer entity";
+            this.AddCustomerEntityButton.UseVisualStyleBackColor = true;
+            this.AddCustomerEntityButton.Click += new System.EventHandler(this.AddCustomerEntityButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 703);
+            this.Controls.Add(this.AddCustomerEntityButton);
             this.Controls.Add(this.CustomerListBox);
             this.Controls.Add(this.jillButton);
             this.Controls.Add(this.jackButton);
@@ -142,6 +154,7 @@
 		private System.Windows.Forms.Button jillButton;
 		private System.Windows.Forms.Timer updateTimer;
 		private System.Windows.Forms.ListBox CustomerListBox;
-	}
+        private System.Windows.Forms.Button AddCustomerEntityButton;
+    }
 }
 
