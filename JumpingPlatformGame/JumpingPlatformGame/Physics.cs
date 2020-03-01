@@ -1,4 +1,6 @@
-﻿namespace JumpingPlatformGame 
+﻿using System;
+
+namespace JumpingPlatformGame 
 {
     public static class ExtensionsInt
     {
@@ -28,7 +30,48 @@
         }
         
     }
-
+    public struct Years
+    {
+        public int Value;
+        public Years(int i)
+        {
+            this.Value = i;
+        }
+        public static bool operator <(TimeSpan time, Years years)
+        {
+            if ((time.Days % 365) < years.Value)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool operator >(TimeSpan time, Years years)
+        {
+            if (((time.Days % 365) > years.Value) || (((time.Days % 365) == years.Value)
+                    && (time.Hours > 0 || time.Minutes > 0 || time.Seconds > 0 || time.Milliseconds > 0)))
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool operator <=(TimeSpan time, Years years)
+        {
+            if (((time.Days % 365) < years.Value)|| (((time.Days % 365) == years.Value)
+                && (time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0 && time.Milliseconds == 0)))
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool operator >=(TimeSpan time, Years years)
+        {
+            if ((time.Days % 365) >= years.Value) 
+            {
+                return true;
+            }
+            return false;
+        }
+    }
 
     public struct Meters
     {
