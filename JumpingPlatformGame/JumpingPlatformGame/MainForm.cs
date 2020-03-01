@@ -107,7 +107,15 @@ namespace JumpingPlatformGame {
 
 		private void AddCustomerEntityButton_Click(object sender, EventArgs e)
 		{
-
+			Customer customer = CustomerListBox.SelectedItem as Customer;
+			if (customer == null)
+			{
+				return;
+			}
+			else
+			{
+				RegisterEntity(new CustomerEntity(customer));
+			}
 		}
 	}
 

@@ -130,14 +130,8 @@ namespace JumpingPlatformGame {
 				{
 					this._Color = Color.Black;
 				}
-				
-				
-				
-				
-
 			}
 		}
-		
 	}
 
 	class Joe : MovableEntity {
