@@ -39,7 +39,7 @@ namespace JumpingPlatformGame
         }
         public static bool operator <(TimeSpan time, Years years)
         {
-            if ((time.Days % 365) < years.Value)
+            if ((time.Days / 365) < years.Value)
             {
                 return true;
             }
@@ -47,7 +47,7 @@ namespace JumpingPlatformGame
         }
         public static bool operator >(TimeSpan time, Years years)
         {
-            if (((time.Days % 365) > years.Value) || (((time.Days % 365) == years.Value)
+            if (((time.Days / 365) > years.Value) || (((time.Days / 365) == years.Value)
                     && (time.Hours > 0 || time.Minutes > 0 || time.Seconds > 0 || time.Milliseconds > 0)))
             {
                 return true;
@@ -56,7 +56,7 @@ namespace JumpingPlatformGame
         }
         public static bool operator <=(TimeSpan time, Years years)
         {
-            if (((time.Days % 365) < years.Value)|| (((time.Days % 365) == years.Value)
+            if (((time.Days / 365) < years.Value)|| (((time.Days / 365) == years.Value)
                 && (time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0 && time.Milliseconds == 0)))
             {
                 return true;
@@ -65,7 +65,7 @@ namespace JumpingPlatformGame
         }
         public static bool operator >=(TimeSpan time, Years years)
         {
-            if ((time.Days % 365) >= years.Value) 
+            if ((time.Days / 365) >= years.Value) 
             {
                 return true;
             }

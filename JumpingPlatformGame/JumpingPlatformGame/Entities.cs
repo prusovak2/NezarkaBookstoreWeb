@@ -105,31 +105,35 @@ namespace JumpingPlatformGame {
 				DateTime dateJoin =(DateTime) this.customer.DateJoined;
 				TimeSpan howLong = DateTime.Now.Subtract(dateJoin);
 
-				if (howLong <= (Years)0)
+				if (howLong < (Years)0)
 				{
 					// error in database, customer JoinDate is in the future
 					this._Color = Color.Pink;
-				}
-				else if (howLong < (Years)1)
-				{
-					this._Color = Color.Black;
-				}
-				else if (howLong >= (Years)1)
-				{
-					this._Color = Color.DarkRed;
-				}
-				else if (howLong >= (Years)2)
-				{
-					this._Color = Color.Red;
-				}
-				else if (howLong >= (Years)3)
-				{
-					this._Color = Color.IndianRed;
 				}
 				else if (howLong >= (Years)4)
 				{
 					this._Color = Color.OrangeRed;
 				}
+				else if (howLong >= (Years)3)
+				{
+					this._Color = Color.IndianRed;
+				}
+				else if (howLong >= (Years)2)
+				{
+					this._Color = Color.Red;
+				}
+				else if (howLong >= (Years)1)
+				{
+					this._Color = Color.DarkRed;
+				}
+				else if (howLong < (Years)1)
+				{
+					this._Color = Color.Black;
+				}
+				
+				
+				
+				
 
 			}
 		}
