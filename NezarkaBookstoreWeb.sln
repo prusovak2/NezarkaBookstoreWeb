@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NezarkaBookstoreWeb", "Neza
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpingPlatformGame", "JumpingPlatformGame\JumpingPlatformGame\JumpingPlatformGame.csproj", "{2C7763AB-F02B-4FA3-BC51-58977CF45488}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NezarkaBookstoreWebTests", "NezarkaBookstoreWebTests\NezarkaBookstoreWebTests.csproj", "{4442C2EB-5011-485B-AD9C-F8DD1D728407}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2C7763AB-F02B-4FA3-BC51-58977CF45488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C7763AB-F02B-4FA3-BC51-58977CF45488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C7763AB-F02B-4FA3-BC51-58977CF45488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4442C2EB-5011-485B-AD9C-F8DD1D728407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4442C2EB-5011-485B-AD9C-F8DD1D728407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4442C2EB-5011-485B-AD9C-F8DD1D728407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4442C2EB-5011-485B-AD9C-F8DD1D728407}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

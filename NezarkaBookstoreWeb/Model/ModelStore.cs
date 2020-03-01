@@ -6,6 +6,8 @@ using System.IO;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("JumpingPlatformGame")]
+[assembly: InternalsVisibleTo("NezarkaBookstoreWebTests")]
+
 
 namespace NezarkaBookstoreWeb
 {
