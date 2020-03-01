@@ -71,6 +71,11 @@ namespace JumpingPlatformGame
             }
             return false;
         }
+
+        public static explicit operator Years(int i)
+        {
+            return new Years(i);
+        }
     }
 
     public struct Meters
