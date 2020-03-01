@@ -1,4 +1,9 @@
 ﻿using System.Drawing;
+using NezarkaBookstoreWeb;
+using System;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("NezarkaBookstoreWebTests")]
 
 namespace JumpingPlatformGame {
 	class Entity {
@@ -77,6 +82,58 @@ namespace JumpingPlatformGame {
 		{
 			this.Vertical = new Movement();
 		}
+	}
+	class CustomerEntity : MovableEntity
+	{
+		Customer customer;
+		public override Color Color
+		{
+			get { return this._Color; }			
+		}
+		private readonly Color _Color;
+
+		public CustomerEntity(Customer customer) : base()
+		{
+			this.customer = customer;
+			if (this.customer.DateJoined == null)
+			{
+				//since always
+				this._Color = Color.Gold;
+			}
+			else
+			{
+				DateTime dateJoin =(DateTime) this.customer.DateJoined;
+				TimeSpan howLong = DateTime.Now.Subtract(dateJoin);
+
+				if (howLong <= (Years)0)
+				{
+					// error in database, customer JoinDate is in the future
+					this._Color = Color.Pink;
+				}
+				else if (howLong < (Years)1)
+				{
+					this._Color = Color.Black;
+				}
+				else if (howLong >= (Years)1)
+				{
+					this._Color = Color.DarkRed;
+				}
+				else if (howLong >= (Years)2)
+				{
+					this._Color = Color.Red;
+				}
+				else if (howLong >= (Years)3)
+				{
+					this._Color = Color.IndianRed;
+				}
+				else if (howLong >= (Years)4)
+				{
+					this._Color = Color.OrangeRed;
+				}
+
+			}
+		}
+		
 	}
 
 	class Joe : MovableEntity {
